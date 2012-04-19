@@ -12,5 +12,5 @@ Gem::Specification.new do |s|
   s.files       = Dir["README.md", "LICENSE.md", "lib/**/*.rb"]
   
   s.add_dependency 'pdf-reader',  '~> 1.1.0'
-  s.add_dependency 'html_writer', '~> 0.1.0'
+  s.add_dependency 'html_writer', '~> 0.2.0'
 end

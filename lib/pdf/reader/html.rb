@@ -7,7 +7,9 @@ module PDF
   class Reader
     class Page
       def to_html
-        self.text
+        self.text.split("\n").map do |paragraph|
+          HtmlWriter.new.write_inline { |html| html.p paragraph }
+        end
       end
     end
     
@@ -17,7 +19,7 @@ module PDF
         html.head do |head|
           head.title options[:title] || ''
         end
-        html.body self.pages.map(&:to_html)
+        html.body self.pages.map(&:to_html).join('')
       end
     end
   end
